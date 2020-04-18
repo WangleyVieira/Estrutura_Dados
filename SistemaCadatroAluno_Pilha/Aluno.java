@@ -1,5 +1,5 @@
 
-package SistemaCadatroAluno_Pilha;
+package Estrutura_Dados.SistemaCadatroAluno_Pilha;
 
 /**
  *

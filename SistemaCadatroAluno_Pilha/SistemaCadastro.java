@@ -1,5 +1,5 @@
 
-package SistemaCadatroAluno_Pilha;
+package Estrutura_Dados.SistemaCadatroAluno_Pilha;
 
 import java.util.Scanner;
 
@@ -40,8 +40,8 @@ public class SistemaCadastro {
                     System.out.print("Informe o codigo do aluno: ");
                     novo.codigoAluno = leitor.next();
                     
-                    novo.proximo = topo;
-                    topo = novo;
+                    novo.proximo = topo; //ira para o proximo objeto, pois o objeto novo esta acessando o atributo proximo
+                    topo = novo; //topo recebendo o objeto novo
                     
                     System.out.println("Aluno inserido\n");
                     break;
@@ -72,7 +72,7 @@ public class SistemaCadastro {
                     aux = topo;
                     while(aux != null){
                         qtdNotas++;
-                        somaNotas += aux.notaAluno;//esta acessando outro objeto notaAluno
+                        somaNotas += aux.notaAluno;//o objeto auxiliar esta acessando o atributo notaAluno e soma as notas informadas
                         aux = aux.proximo;
                     }
                     mediaNotas = (double) somaNotas / qtdNotas;
@@ -82,7 +82,7 @@ public class SistemaCadastro {
                     break;
                     
                 case 4:
-                    if(topo == null){
+                    if(topo == null){//se estiver vazio
                         System.out.println("Sem nada");
                     }
                     else{
@@ -114,7 +114,7 @@ public class SistemaCadastro {
                     }
                     else{
                         System.out.println("Aluno "+topo.codigoAluno+" deletado");
-                        topo = topo.proximo;
+                        topo = topo.proximo;//apaga o ultimo que entrou na pilha
                     }
                     break;
                     
